@@ -1,0 +1,10 @@
+React router dom
+main.js is the parent of app.jsx
+<BrowserRouter>
+      <App />
+    </BrowserRouter>
+
+
+    flex-direction: column
+Arranges flex items vertically (stacked on top of each other) instead of horizontally
+Only works when applied to an element that's already a flex container
