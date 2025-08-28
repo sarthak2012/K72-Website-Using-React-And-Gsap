@@ -8,3 +8,7 @@ main.js is the parent of app.jsx
     flex-direction: column
 Arranges flex items vertically (stacked on top of each other) instead of horizontally
 Only works when applied to an element that's already a flex container
+
+npm  i gsap
+npm  i @gsap/react
+useref in Agence.jsx

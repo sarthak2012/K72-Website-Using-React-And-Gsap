@@ -1,5 +1,5 @@
 import React from "react";
-import Vedioss from "../../../public/videos/homeVedio.mp4"
+import Vedioss from "../../../src/videos/homeVedio.mp4";
 
 const Vedio = () => {
   return (
