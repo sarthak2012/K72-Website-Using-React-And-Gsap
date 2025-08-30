@@ -12,3 +12,6 @@ Only works when applied to an element that's already a flex container
 npm  i gsap
 npm  i @gsap/react
 useref in Agence.jsx
+
+
+  const imageDivRef = useRef(null);
