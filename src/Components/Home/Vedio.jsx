@@ -16,24 +16,3 @@ const Vedio = () => {
 };
 
 export default Vedio;
-
-
-// import React from "react";
-
-// const Vedio = () => {
-//   return (
-//     <div className="h-full w-full">
-//       <video
-//         autoPlay
-//         muted
-//         loop
-//         playsInline
-//         className="h-full w-full object-cover"
-//         src="/vidios/homeVedio.mp4"
-        
-//       ></video>
-//     </div>
-//   );
-// };
-
-// export default Vedio;

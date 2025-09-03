@@ -1,4 +1,7 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import img1 from "../Assets/1.jpg";
 import img2 from "../Assets/2.jpg";
 import img3 from "../Assets/3.jpg";
@@ -13,58 +16,61 @@ import img11 from "../Assets/11.jpg";
 import img12 from "../Assets/12.jpg";
 import img13 from "../Assets/13.jpg";
 import img14 from "../Assets/14.jpg";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-//array of all the images that will be changed on scrolling
-const imageArray = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-];
 
 const Agence = () => {
   gsap.registerPlugin(ScrollTrigger); //image of person
 
   const imageDivRef = useRef(null);
 
-    const imageRef = useRef(null); // for change of image
+  const imageRef = useRef(null); // for change of image
+
+  //array of all the images that will be changed on scrolling
+  const imageArray = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+  ];
 
   useGSAP(function () {
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        start: "top 20.7%",
-        end: "bottom -160%",
-        scrub: true,
+        start: "top 0.7%",
+        end: "bottom -190%",
         pin: true,
-         onUpdate: (elem) => {
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: "transform",
+        scrub: 1, // smooth scrubbing with 1s easing
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (elem) => {
           let imageIndex;
           if (elem.progress < 1) {
             imageIndex = Math.floor(elem.progress * imageArray.length);
           } else {
-            imageIndex = imageArray.length - 1
+            imageIndex = imageArray.length - 1;
           }
-          imageRef.current.src = imageArray[imageIndex]
-        }
+          imageRef.current.src = imageArray[imageIndex];
+        },
       },
     });
   });
 
   return (
-    <div>
-      <div className="section1">
+    <div className="text-white">
+      <div className="section1  relative py-1">
         <div
           ref={imageDivRef}
           className="h-[20vw] w-[15vw] overflow-hidden rounded-4xl top-36 absolute left-[30vw] "
